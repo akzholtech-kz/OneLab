@@ -1,1 +1,23 @@
-<p>sidenav works!</p>
+<nav class="navbar">
+    <div class="container">
+        <ul class="nav-list">
+            <li><a (click)="item = 'main'" style="cursor: pointer;">Главная</a></li>
+            <li><a (click)="item = 'about'" style="cursor: pointer;">О нас</a></li>
+            <li><a (click)="item = 'contacts'" style="cursor: pointer;">Контакты</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="row" *ngIf="item === '' ">
+    <label for="bin">Bin</label>
+    <input type="text" [(ngModel)]="name" id="bin">
+    <p>Recycling bin: {{name}}</p>
+</div>
+<app-main *ngIf="item === 'main'"></app-main>
+<app-about *ngIf="item === 'about'"></app-about>
+<app-contacts *ngIf="item === 'contacts'"></app-contacts>
+
+<!-- <div [ngSwitch]="item">
+    <app-main *ngSwitchCase="'main'"></app-main>
+    <app-about *ngSwitchCase="'about'"></app-about>
+    <app-contacts *ngSwitchCase="'contacts'"></app-contacts> 
+</div> -->
