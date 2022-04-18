@@ -21,3 +21,10 @@
     <app-about *ngSwitchCase="'about'"></app-about>
     <app-contacts *ngSwitchCase="'contacts'"></app-contacts> 
 </div> -->
+
+<div *ngFor="let item of servers | filter:name: 'status'"
+[ngClass]="getClassesbyStatus(item)">
+    {{item.name}} |
+    {{item.status}} |
+    {{item.channel}}
+</div>

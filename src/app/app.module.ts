@@ -1,3 +1,4 @@
+import { FilterPipe } from './sidenav/filter.pipe';
 import { HeaderComponent } from './header/header.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     MainComponent,
     AboutComponent,
-    ContactsComponent
+    ContactsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

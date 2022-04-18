@@ -13,5 +13,30 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  servers = [
+    {
+      name: "First Server",
+      status: 'online',
+      channel: 'Alma TV' 
+    },
+    {
+      name: "Second Server",
+      status: 'offline',
+      channel: 'Kaz TV'
+    },
+    {
+      name: "Third Server",
+      status: "offline",
+      channel: 'Kaz Sport'
+    }
+  ]
+
+  getClassesbyStatus(item: {name: string, status: string, channel: string}) {
+    return {
+      'list-off' : item.status === "offline",
+      'list-on' : item.status === 'online'
+    }
+  }
  
 }
